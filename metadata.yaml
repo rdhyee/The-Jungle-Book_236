@@ -11,9 +11,9 @@ creator:
     url: http://www.gutenberg.org/2009/agents/132
     wikipedia: http://en.wikipedia.org/wiki/Rudyard_Kipling
 gutenberg_bookshelf:
-- Contemporary Reviews
-- Movie Books
 - Scouts
+- Movie Books
+- Contemporary Reviews
 - Children's Literature
 gutenberg_issued: '2006-01-16'
 gutenberg_type: Text
@@ -24,14 +24,14 @@ publisher: Project Gutenberg
 rights: Public domain in the USA.
 rights_url: http://creativecommons.org/about/pdm
 subjects:
-- '!lcsh:Mowgli (Fictitious character) -- Fiction'
-- '!lcsh:Jungle animals -- Fiction'
-- '!lcsh:Jungles -- Fiction'
 - '!lcsh:Animals -- Fiction'
 - '!lcsh:India -- Fiction'
-- '!lcsh:Feral children -- Fiction'
-- '!lcsh:Short stories'
-- '!lcc:PR'
+- '!lcsh:Jungles -- Fiction'
+- '!lcsh:Jungle animals -- Fiction'
 - '!lcsh:Adventure stories, English'
+- '!lcsh:Short stories'
+- '!lcsh:Feral children -- Fiction'
+- '!lcc:PR'
+- '!lcsh:Mowgli (Fictitious character) -- Fiction'
 title: The Jungle Book
 url: http://www.gutenberg.org/ebooks/236
