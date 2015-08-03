@@ -9,8 +9,8 @@ creator:
   author:
     agent_name: Kipling, Rudyard
     aliases:
-    - Kipling, Joseph Rudyard
     - Kipling, R. (Rudyard)
+    - Kipling, Joseph Rudyard
     birthdate: 1865
     deathdate: 1936
     gutenberg_agent_id: '132'
@@ -30,14 +30,14 @@ publisher: Project Gutenberg
 rights: Public domain in the USA.
 rights_url: http://creativecommons.org/about/pdm
 subjects:
-- '!lcsh:Animals -- Fiction'
-- '!lcsh:India -- Fiction'
-- '!lcsh:Jungles -- Fiction'
-- '!lcsh:Jungle animals -- Fiction'
-- '!lcsh:Adventure stories, English'
-- '!lcsh:Short stories'
-- '!lcsh:Feral children -- Fiction'
-- '!lcc:PR'
-- '!lcsh:Mowgli (Fictitious character) -- Fiction'
+- '!lcsh: Jungle animals -- Fiction'
+- '!lcsh: Adventure stories, English'
+- '!lcsh: Feral children -- Fiction'
+- '!lcsh: India -- Fiction'
+- '!lcsh: Mowgli (Fictitious character) -- Fiction'
+- '!lcsh: Short stories'
+- '!lcsh: Animals -- Fiction'
+- '!lcc: PR'
+- '!lcsh: Jungles -- Fiction'
 title: The Jungle Book
 url: http://www.gutenberg.org/ebooks/236
