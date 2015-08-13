@@ -1,0 +1,32 @@
+language: ruby
+before_install:
+- gem install asciidoctor tilt
+script:
+- VERSION=`ruby -e "require 'yaml'; meta = YAML.load_file('metadata.yaml'); puts meta['_version'];"`
+- git clone https://github.com/gitenberg-dev/asciidoctor-htmlbook.git
+- asciidoctor -a toc,version=$VERSION -b xhtml5 -T ./asciidoctor-htmlbook/htmlbook-autogen/
+  -d book book.asciidoc -o book.html
+- git clone https://github.com/gitenberg-dev/HTMLBook
+- xsltproc -stringparam external.assets.list " " ./HTMLBook/htmlbook-xsl/epub.xsl book.html
+- cp ./HTMLBook/stylesheets/epub/epub.css OEBPS
+- cp cover.jpg OEBPS/cover.jpg
+- if test -d "./images"; then mv ./images ./OEBPS/ ;fi
+- zip -rX book.epub mimetype
+- zip -rX book.epub OEBPS/ META-INF/
+- if test -d "OEBPS/images/"; then zip -rX book.epub OEBPS/images/ ;fi 
+- mv book.epub The-Jungle-Book.epub
+branches:
+  only:
+  - master
+deploy:
+  skip_cleanup: true
+  provider: releases
+  api_key:
+    secure: LLA8CWmQKV9vRpMBevk3muuCPGqhnMOCiHiq3w5aYxtQ5y0lt0NJPtqxt9N8BTY9ovC3k7rEc3VXfSkCg8nEHEYwbUc+cLjjG5xTxkREUvA3h7drYDOCrq9lgBnqPitNyqTXB1jL2yWlHC+ptiXBDjhdPrFFUCmqJj9HMvzlLNv5nudU0oGPFL+S6wOQGoNKF9fEJfHwLXxCEGd2CmRsAyvpR83SNp79A7UhEomQV4tfKiIy0vDS6DJRG0btb7ht2URV5Jm0WG+FJGXveySSvfpAvRFUeeVoj/lfRJCAT7qYmayuc6elQfUY2Iw3MQMTr9o7iM0mCYumXUUjW6Hrug1X3ddsMw/NNJ89Nzyo2ArNONZlAvEHTxaSQ76Pjb9c5Xmrd3/IRVMwWQS6/+JNw2LwJuSv8tLQlmqoEU8Sde2LyreWhG3ehHcYaI/JZu2UvBr4xAUGsuPHMzkz+xAseRnDlDGCFyIAabRxx0v+svSbZO8gU+FpEuii35CPz3sDRJM6zA6Tb/SBzYmnctUMK4h9AU1NMCn8oV2R39w9dOgprfKS9uKK42FisC+V7ahPIOxzuhu+WBYUvi76Q6ru4lkkeSlnYFJE6BD8RHUg5n2/OtPvwshCMDZkYrkY+66bowcTrAK8DpfZwi9j1P4dNVsF92wNIx8I0VKU8lD5Nrc=
+  file: The-Jungle-Book.epub
+  "on":
+    repo: GITenberg/The-Jungle-Book_236
+addons:
+  apt:
+    packages:
+    - xsltproc
