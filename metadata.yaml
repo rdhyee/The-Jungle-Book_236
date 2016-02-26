@@ -1,5 +1,5 @@
 _repo: The-Jungle-Book_236
-_version: 0.0.2
+_version: 0.1.0
 covers:
 - attribution: Jeff Walters, 2015
   cover_type: original
@@ -41,5 +41,6 @@ subjects:
 - '!lcsh: Animals -- Fiction'
 - '!lcc: PR'
 - '!lcsh: Jungles -- Fiction'
+- GITenberg
 title: The Jungle Book
 url: http://www.gutenberg.org/ebooks/236
